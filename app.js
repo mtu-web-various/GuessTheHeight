@@ -1,5 +1,9 @@
+var jQueryScript = document.createElement('script');  
+jQueryScript.setAttribute('src','https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js');
+document.head.appendChild(jQueryScript);
+
 document.addEventListener('DOMContentLoaded', function() {
-  var wordCount = 10;
+  var playerCount = 1;
   var guessCount = 4;
   var password = '';
 
@@ -18,23 +22,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function startGame() {
     // get random words and append them to the DOM
-    var wordList = document.getElementById("word-list");
-    var randomWords = getRandomValues(words, wordCount);
-    randomWords.forEach(function(word) {
+    var heightList = document.getElementById("height-list");
+    var heights = [168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189,
+                  190, 191, 192, 193, 194, 195, 196, 197, 198];
+    heights.forEach(function(h) {
       var li = document.createElement("li");
-      li.innerText = word;
-      wordList.appendChild(li);
+      li.innerText = h;
+      heightList.appendChild(li);
     });
 
     // set a secret password and the guess count display
-    password = getRandomValues(randomWords, 1)[0];
+    password = getRandomValues(randomPlayers, 1)[0];
     setGuessCount(guessCount);
 
     // add update listener for clicking on a word
-    wordList.addEventListener('click', updateGame);
+    heightList.addEventListener('click', updateGame);
   }
 
   function getRandomValues(array, numberOfVals) {
+    JSON.parse(array);
     return shuffle(array).slice(0, numberOfVals);
   }
 
