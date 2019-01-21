@@ -4,8 +4,13 @@
   <meta charset="UTF-8">
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="players.js"></script>
 </head>
 <body>
+  <!--Getting the Data-->
+  
+
+  
   <div id="start-screen" class="show">
     <h1>GUESS THE FOOTBALLER HEIGHT</h1>
     <p>Check your football knowledge</p>
@@ -13,13 +18,13 @@
     <button id="start">Start</button>
   </div>
   <div id="game-screen" class="hide">
+    <h1 id="player-info"></h1>
     <ul id="height-list"></ul>
     <p>Click on a word to make a guess.</p>
     <p id="guesses-remaining"></p>
     <p id="winner" class="hide">Congratulations! You win! <a href="./index.html">Play again?</a></p>
     <p id="loser" class="hide">Sorry, you lost. <a href="./index.html">Play again?</a></p>
   </div>
-  <script src="words.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

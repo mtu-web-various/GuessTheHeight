@@ -1,4 +1,4 @@
-[
+var players = [
   {
      "Position": "CF",
      "Player Name": "C. RONALDO",
